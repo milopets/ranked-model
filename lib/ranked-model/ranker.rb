@@ -189,6 +189,7 @@ module RankedModel
           # we're inserting directly between 2 items
           rank_at_average(min, max)
         else
+          modifier = min < max ? 1 : -1
           rank_at(min + modifier * ranker.preferred_gap)
         end
       end
